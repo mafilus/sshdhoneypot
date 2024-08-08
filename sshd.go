@@ -96,7 +96,7 @@ func sshd(host string, key []byte) {
 				switch req.Type {
 				case "shell":
 					// Change the os.Stdout to os.File
-					connection.Write([]byte("Fuck Bears!\n"))
+					connection.Write([]byte("Fuck Bears!\r\n"))
 					io.Copy(connection, os.Stdout)
 				case "pty-req":
 					log.Println("pty-req")
